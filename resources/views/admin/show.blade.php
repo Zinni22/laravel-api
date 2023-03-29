@@ -17,9 +17,16 @@
                         {{ $project->description }}
                   </p>
 
-                  <p><strong>Link:</strong> 
-                        {{ $project->link }}
-                  </p>
+                  @if ($project->link)
+                        <p><strong>Link:</strong> 
+                              {{ $project->link }}
+                        </p>
+                  @else
+                        <p><strong>Link:</strong> 
+                        -
+                        </p> 
+                  @endif
+                  
 
                   <a href="{{ route('admin.project.index') }}" class="btn btn-primary">
                         Torna indietro
